@@ -195,8 +195,6 @@ window.addEventListener('resize', function () {
 
 window.addEventListener('scroll', function () {
   const graphicSectionTop = sectionList[3].offsetTop;
-  console.log(window.scrollY)
-  console.log(graphicSectionTop)
   if (window.scrollY + 128 <= graphicSectionTop) {
     closeGrraphicModal();
   }

@@ -58,6 +58,48 @@
     transform: translateX(0);
   }
 }
+@-webkit-keyframes mousehover2 {
+  0% {
+    transform: translateY(14px);
+    filter: blur(3px);
+  }
+  10% {
+    transform: translateY(-12px);
+    color: #fff;
+    filter: blur(1px);
+  }
+  25% {
+    transform: translateY(10px);
+  }
+  50% {
+    transform: translateY(-8px);
+    color: #997dff;
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes mousehover2 {
+  0% {
+    transform: translateY(14px);
+    filter: blur(3px);
+  }
+  10% {
+    transform: translateY(-12px);
+    color: #fff;
+    filter: blur(1px);
+  }
+  25% {
+    transform: translateY(10px);
+  }
+  50% {
+    transform: translateY(-8px);
+    color: #997dff;
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
 /* Style */
 .sec02_web .web_projects > li .project_body .skills li {
   border-radius: 100px;
@@ -247,9 +289,9 @@ section {
   cursor: pointer;
 }
 #header .gnb > ul > li:hover {
+  color: #997dff;
   -webkit-animation: mousehover 0.5s forwards;
           animation: mousehover 0.5s forwards;
-  color: #997dff;
 }
 #header .btn_all_menu {
   display: none;
@@ -1098,10 +1140,13 @@ section {
 .sec04_graphic {
   padding: 8rem 0;
 }
-.sec04_graphic .graphic_project_modal {
-  display: none;
+@media (max-width: 599px) {
+  .sec04_graphic {
+    max-width: none;
+  }
 }
 .sec04_graphic .graphic_project {
+  overflow: hidden;
   display: flex;
   flex-wrap: wrap;
 }
@@ -1135,8 +1180,8 @@ section {
 }
 @media (max-width: 599px) {
   .sec04_graphic .graphic_project {
-    flex-wrap: nowrap;
-    max-width: 320px;
+    width: calc(100% - 20px);
+    margin: auto;
   }
 }
 .sec04_graphic .graphic_project.modal_pc .project_title,
@@ -1320,11 +1365,16 @@ section {
 @media (max-width: 599px) {
   .sec04_graphic .graphic_project > li {
     flex-shrink: 0;
-    width: 12.5rem;
-    padding-top: 17.6775rem;
+    width: calc((100% - 0.625rem) / 2);
+    padding-top: calc((100% - 0.625rem) / 2 * 1.4142);
   }
 }
 @media (min-width: 800px) {
+  .sec04_graphic .graphic_project > li:last-child {
+    display: none !important;
+  }
+}
+@media (max-width: 599px) {
   .sec04_graphic .graphic_project > li:last-child {
     display: none !important;
   }
@@ -1371,7 +1421,7 @@ section {
   border: 1px solid #997dff;
   background-color: #111;
 }
-@media (max-width: 1519px) and (min-width: 1280px) {
+@media (max-width: 1519px) {
   .sec04_graphic .graphic_project > li.modal_m {
     left: 1.875rem;
     right: 1.875rem;
@@ -1401,6 +1451,9 @@ section {
 .sec04_graphic .graphic_project > li .project_txt {
   display: none;
   min-width: 20rem;
+}
+.sec04_graphic .graphic_project > li:hover {
+  transform: scale(1.1);
 }
 .sec04_graphic .btn_close {
   z-index: 100;
@@ -1453,16 +1506,23 @@ section {
     row-gap: 5rem;
   }
 }
-.sec05_contact .profile {
+.sec05_contact .profile a {
+  display: inline-block;
   font-family: "Cafe24ClassicType-Regular";
   font-size: 4rem;
   line-height: 1.2em;
+  cursor: url(../img/sec05_contact/cursor_mail.svg) 10 10, auto;
   /* profile image */
 }
 @media (min-width: 1520px) {
-  .sec05_contact .profile {
+  .sec05_contact .profile a {
     font-size: 72px;
   }
+}
+.sec05_contact .profile a:hover {
+  color: #fff;
+  -webkit-animation: mousehover2 0.5s forwards;
+          animation: mousehover2 0.5s forwards;
 }
 @media (min-width: 1280px) {
   .sec05_contact .info_list {

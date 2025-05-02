@@ -148,6 +148,14 @@ $text-border: 1px 0 $color_main, -1px 0 $color_main, 0 1px $color_main, 0 -1px $
   100% {transform: translateX(0);}
 }
 
+@keyframes mousehover2 {
+  0% {transform: translateY(14px); filter: blur(3px);}
+  10% {transform: translateY(-12px); color: $color_white; filter: blur(1px);}
+  25% {transform: translateY(10px);}
+  50% {transform: translateY(-8px); color: $color_main;}
+  100% {transform: translateY(0);}
+}
+
 /* Style */
 %border_radius {
   border-radius: 100px;
@@ -353,8 +361,8 @@ section {
         cursor: pointer;
         
         &:hover {
-          animation: mousehover .5s forwards;
           color: $color_main;
+          animation: mousehover .5s forwards;
         }
       }
     }
@@ -1130,15 +1138,15 @@ section {
 .sec04_graphic {
   padding: $rem_128px 0;
 
-  // 삭제
-  .graphic_project_modal {
-    display: none;
+  @include media-down($breakpoint_mobile) {
+    max-width: none;
   }
 
   .graphic_project {
+    overflow: hidden;
     display: flex;
     flex-wrap: wrap;
-    
+
     @include desktop() {
       gap: $rem_24px;
       max-width: 1440px;
@@ -1163,8 +1171,8 @@ section {
     }
     
     @include media-down($breakpoint_mobile) {
-      flex-wrap: nowrap;
-      max-width: 320px;
+      width: calc(100% - 20px);
+      margin: auto;
     }
 
     &.modal_pc,
@@ -1307,7 +1315,7 @@ section {
           padding-top: calc(((100% - ($gap * 3)) / 4) * 1.4142);
         }
       }
-      
+
       @include desktop() {
         @include graphic_project_list_size($rem_24px);
       }
@@ -1326,12 +1334,16 @@ section {
 
       @include media-down($breakpoint_mobile) {
         flex-shrink: 0;
-        width: $rem_200px;
-        padding-top: $rem_200px * 1.4142;
+        width: calc((100% - $rem_10px) / 2);
+        padding-top: calc((100% - $rem_10px) / 2 * 1.4142);
       }
       
       &:last-child {
         @include media-up($breakpoint_tablet) {
+          display: none !important;
+        }
+
+        @include media-down($breakpoint_mobile) {
           display: none !important;
         }
       }
@@ -1357,7 +1369,7 @@ section {
         border: 1px solid $color_main;
         background-color: $color_gray1;
 
-        @include laptop() {
+        @include media-down($breakpoint_desktop) {
           left: $rem_30px;
           right: $rem_30px;
           top: $rem_30px;
@@ -1387,6 +1399,10 @@ section {
       .project_txt {
         display: none;
         min-width: $rem_320px;
+      }
+
+      &:hover {
+        transform: scale(1.1);
       }
     }
   }
@@ -1444,19 +1460,28 @@ section {
   }
 
   .profile {
-    font-family: $font-main;
-    font-size: $rem_64px;
-    line-height: 1.2em;
-    
-    @include desktop() {
-      font-size: 72px;
+    a {
+      display: inline-block;
+      font-family: $font-main;
+      font-size: $rem_64px;
+      line-height: 1.2em;
+      cursor: url(../img/sec05_contact/cursor_mail.svg) 10 10, auto;
+      
+      @include desktop() {
+        font-size: 72px;
+      }
+
+      &:hover {
+        color: $color_white;
+        animation: mousehover2 .5s forwards;
+      }
+      
+      /* profile image */
+      // width: 19%;
+      // height: 0;
+      // padding-top: 19%;
+      // @include background('../img/sec05_contact/profile.svg');
     }
-    
-    /* profile image */
-    // width: 19%;
-    // height: 0;
-    // padding-top: 19%;
-    // @include background('../img/sec05_contact/profile.svg');
   }
 
   .info_list {
@@ -1489,7 +1514,6 @@ section {
 
         span {
           opacity: 1;
-          // transform: translateY(0);
         }
       }
 
@@ -1528,10 +1552,8 @@ section {
         }
 
         &:last-child {
-          // opacity: 0;
           border-top: 1px solid rgba($color_white, $alpha: 0.3);
           line-height: 1.6em;
-          // transform: translateY(-105%);
           transition: .5s;
         }
       }
