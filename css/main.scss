@@ -1468,7 +1468,7 @@ section {
       cursor: url(../img/sec05_contact/cursor_mail.svg) 10 10, auto;
       
       @include desktop() {
-        font-size: 72px;
+        font-size: $rem_72px;
       }
 
       &:hover {
