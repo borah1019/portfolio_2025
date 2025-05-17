@@ -915,6 +915,9 @@ section {
 }
 
 /* Sec03_javascript */
+.sec03_javascript {
+  justify-content: flex-start;
+}
 @media (min-width: 1520px) {
   .sec03_javascript {
     row-gap: 4rem;
@@ -1217,7 +1220,7 @@ section {
 .sec04_graphic .graphic_project.modal_pc .project_info .info_color,
 .sec04_graphic .graphic_project .modal_m .project_info .info_summary,
 .sec04_graphic .graphic_project .modal_m .project_info .info_color {
-  flex-direction: row;
+  flex-direction: column;
   grid-column: span 1;
 }
 @media (min-width: 1520px) {
@@ -1225,7 +1228,6 @@ section {
 .sec04_graphic .graphic_project.modal_pc .project_info .info_color,
 .sec04_graphic .graphic_project .modal_m .project_info .info_summary,
 .sec04_graphic .graphic_project .modal_m .project_info .info_color {
-    flex-direction: column;
     grid-column: span 2;
   }
 }
@@ -1277,7 +1279,7 @@ section {
   top: 0;
   bottom: 0;
   max-width: none;
-  background-color: rgba(17, 17, 17, 0.8);
+  background-color: #111;
 }
 .sec04_graphic .graphic_project.modal_pc > li {
   display: flex;
@@ -1450,7 +1452,6 @@ section {
 }
 .sec04_graphic .graphic_project > li .project_txt {
   display: none;
-  min-width: 20rem;
 }
 .sec04_graphic .graphic_project > li:hover {
   transform: scale(1.1);
@@ -1527,6 +1528,7 @@ section {
 @media (min-width: 1280px) {
   .sec05_contact .info_list {
     width: 50%;
+    margin-top: 1.25rem;
   }
 }
 .sec05_contact .info_list * {

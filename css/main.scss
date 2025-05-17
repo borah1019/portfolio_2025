@@ -949,6 +949,8 @@ section {
 /* Sec03_javascript */
 
 .sec03_javascript {
+  justify-content: flex-start;
+
   @include desktop() {
     row-gap: $rem_64px;
   }
@@ -1203,11 +1205,10 @@ section {
 
         .info_summary,
         .info_color {
-          flex-direction: row;
+          flex-direction: column;
           grid-column: span 1;
           
           @include desktop() {
-            flex-direction: column;
             grid-column: span 2;
           }
         }
@@ -1258,7 +1259,7 @@ section {
       top: 0;
       bottom: 0;
       max-width: none;
-      background-color: rgba($color_gray1, $alpha: 0.8);
+      background-color: $color_gray1;
 
       &>li {
         display: flex;
@@ -1398,7 +1399,7 @@ section {
 
       .project_txt {
         display: none;
-        min-width: $rem_320px;
+        // min-width: $rem_320px;
       }
 
       &:hover {
@@ -1487,6 +1488,7 @@ section {
   .info_list {
     @include media-up($breakpoint_laptop) {
       width: 50%;
+      margin-top: $rem_20px;
     }
     
     & * {
