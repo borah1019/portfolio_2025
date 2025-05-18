@@ -673,19 +673,19 @@ section {
     }
 
     @include laptop() {
-      min-height: 381px;
+      min-height: 379px;
     }
 
     @include tablet() {
-      min-height: 312px;
+      min-height: 311px;
     }
 
     @include mobile() {
-      min-height: 570px;
+      min-height: 580px;
     }
 
     @include media-down($breakpoint_mobile) {
-      min-height: 571px;
+      min-height: 628px;
     }
 
     &>li {
@@ -829,7 +829,6 @@ section {
           @include media-down($breakpoint_tablet) {
             @include text_overflow(3);
             margin: $rem_16px 0;
-            font-size: $rem_14px;
             text-align: center;
           }
         }
@@ -1125,10 +1124,6 @@ section {
           @include media-up($breakpoint_mobile) {
             font-size: $rem_18px;
           }
-
-          @include media-down($breakpoint_mobile) {
-            font-size: $rem_14px;
-          }
         }
       }
     }
@@ -1214,13 +1209,12 @@ section {
         }
 
         .info_title {
-          font-size: $rem_20px;
           font-weight: $font_bold_bold;
           line-height: 1.6em;
           white-space: nowrap;
 
-          @include laptop() {
-            font-size: $rem_16px;
+          @include desktop() {
+            font-size: $rem_20px;
           }
         }
 
@@ -1228,11 +1222,10 @@ section {
           display: flex;
           gap: $rem_10px;
           color: $color_white;
-          font-size: $rem_20px;
           line-height: 1.6em;
 
-          @include laptop() {
-            font-size: $rem_16px;
+          @include desktop() {
+            font-size: $rem_20px;
           }
         }
 

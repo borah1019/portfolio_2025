@@ -619,22 +619,22 @@ section {
 }
 @media (max-width: 1519px) and (min-width: 1280px) {
   .sec02_web .web_projects {
-    min-height: 381px;
+    min-height: 379px;
   }
 }
 @media (max-width: 1279px) and (min-width: 800px) {
   .sec02_web .web_projects {
-    min-height: 312px;
+    min-height: 311px;
   }
 }
 @media (max-width: 799px) {
   .sec02_web .web_projects {
-    min-height: 570px;
+    min-height: 580px;
   }
 }
 @media (max-width: 599px) {
   .sec02_web .web_projects {
-    min-height: 571px;
+    min-height: 628px;
   }
 }
 .sec02_web .web_projects > li {
@@ -789,7 +789,6 @@ section {
     -webkit-line-clamp: 3;
     text-overflow: ellipsis;
     margin: 1rem 0;
-    font-size: 0.875rem;
     text-align: center;
   }
 }
@@ -1133,11 +1132,6 @@ section {
     font-size: 1.125rem;
   }
 }
-@media (max-width: 599px) {
-  .sec03_javascript .javascript_projects > li hgroup p {
-    font-size: 0.875rem;
-  }
-}
 
 /* Sec04_graphic */
 .sec04_graphic {
@@ -1233,15 +1227,14 @@ section {
 }
 .sec04_graphic .graphic_project.modal_pc .project_info .info_title,
 .sec04_graphic .graphic_project .modal_m .project_info .info_title {
-  font-size: 1.25rem;
   font-weight: 600;
   line-height: 1.6em;
   white-space: nowrap;
 }
-@media (max-width: 1519px) and (min-width: 1280px) {
+@media (min-width: 1520px) {
   .sec04_graphic .graphic_project.modal_pc .project_info .info_title,
 .sec04_graphic .graphic_project .modal_m .project_info .info_title {
-    font-size: 1rem;
+    font-size: 1.25rem;
   }
 }
 .sec04_graphic .graphic_project.modal_pc .project_info .info_p,
@@ -1249,13 +1242,12 @@ section {
   display: flex;
   gap: 0.625rem;
   color: #fff;
-  font-size: 1.25rem;
   line-height: 1.6em;
 }
-@media (max-width: 1519px) and (min-width: 1280px) {
+@media (min-width: 1520px) {
   .sec04_graphic .graphic_project.modal_pc .project_info .info_p,
 .sec04_graphic .graphic_project .modal_m .project_info .info_p {
-    font-size: 1rem;
+    font-size: 1.25rem;
   }
 }
 .sec04_graphic .graphic_project.modal_pc .project_info .info_color .info_p,
