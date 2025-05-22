@@ -1332,6 +1332,23 @@ section {
         padding-top: calc((100% - $rem_10px) / 2 * 1.4142);
       }
       
+      &:hover {
+        &::before {
+          content: '';
+          position: absolute;
+          left: 0;
+          right: 0;
+          top: 0;
+          bottom: 0;
+          background-color: rgba($color: $color_gray1, $alpha: 0.6);
+        }
+
+        &::after {
+          opacity: 1;
+          transform: translate(-50%, -50%) rotate(180deg);
+        }
+      }
+
       &:last-child {
         @include media-up($breakpoint_tablet) {
           display: none !important;
@@ -1348,6 +1365,20 @@ section {
         }
       }
 
+      &::after {
+        content: '';
+        opacity: 0;
+        display: block;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 80%;
+        height: calc(100% / 1.4142 * 0.8);
+        @include background('../img/common/btn_circle.svg');
+        transform: translate(-50%, -50%);
+        transition: all 0.4s;
+      }
+      
       &.modal_m {
         z-index: 100;
         display: flex;
