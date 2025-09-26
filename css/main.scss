@@ -1278,7 +1278,7 @@ section {
           content: '';
           display: block;
           width: 0;
-          height:85vh;
+          height: 85vh;
           padding-right: calc(85vh * 0.7037);
           border-radius: $rem_10px;
           @extend %background_setting;
@@ -1287,6 +1287,16 @@ section {
         @for $i from 1 through 9 {
           &:nth-child(#{$i})::before {
             background-image: url(../img/sec04_graphic/graphic_project#{$i}.jpg);
+          }
+        }
+
+        &:hover {
+          &::before {
+            position: static;
+          }
+  
+          &::after {
+            display: none;
           }
         }
       }
@@ -1408,6 +1418,17 @@ section {
           bottom: $rem_20px;
         }
 
+        &::before {
+          content: '';
+          position: absolute;
+          z-index: -1;
+          left: 0;
+          right: 0;
+          top: 0;
+          bottom: 0;
+          background-color: rgba($color: $color_gray1, $alpha: 0.9);
+        }
+
         &::after {
           content: '';
           z-index: -1;
@@ -1418,6 +1439,7 @@ section {
           top: 0;
           bottom: 0;
           background: $color_gray1;
+          display: none;
         }
       }
 

@@ -1326,6 +1326,12 @@ section {
 .sec04_graphic .graphic_project.modal_pc > li:nth-child(9)::before {
   background-image: url(../img/sec04_graphic/graphic_project9.jpg);
 }
+.sec04_graphic .graphic_project.modal_pc > li:hover::before {
+  position: static;
+}
+.sec04_graphic .graphic_project.modal_pc > li:hover::after {
+  display: none;
+}
 .sec04_graphic .graphic_project > li {
   overflow: hidden;
   height: 0;
@@ -1457,6 +1463,16 @@ section {
     bottom: 1.25rem;
   }
 }
+.sec04_graphic .graphic_project > li.modal_m::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(17, 17, 17, 0.9);
+}
 .sec04_graphic .graphic_project > li.modal_m::after {
   content: "";
   z-index: -1;
@@ -1467,6 +1483,7 @@ section {
   top: 0;
   bottom: 0;
   background: #111;
+  display: none;
 }
 .sec04_graphic .graphic_project > li .project_txt {
   display: none;
